@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="lana-privacy-version" content="1">
+<title>Integritetspolicy för lana</title>
+<style>
+body { font-family: system-ui, sans-serif; line-height: 1.5; max-width: 40rem; margin: 0 auto; padding: 1rem; color: #1b1b1b; background: #fff; }
+h1 { font-size: 1.6rem; }
+h2 { font-size: 1.2rem; margin-top: 1.8rem; }
+.dev { border: 2px solid #b00020; padding: 0.5rem; font-weight: bold; }
+@media (prefers-color-scheme: dark) { body { color: #ececec; background: #121212; } a { color: #8ab4f8; } }
+</style>
+</head>
+<body>
+<main>
+<h1>Integritetspolicy för lana</h1>
+<p>Version 1, gäller från 2026-11-25.</p>
+
+<h2>Vem som ansvarar</h2>
+<p>lana är en familjeplanerare som Lana utvecklar och driver för sin egen familjs privata planering. Ingen utanför familjen använder lana, och lana används inte i arbete eller i ett företag. Frågor om dina uppgifter skickar du till <a href="mailto:lanaplanner.app@gmail.com">lanaplanner.app@gmail.com</a>.</p>
+
+<h2>Vad den här versionen gör</h2>
+<p>Den här versionen av lana är ett test av inloggningen. Testet visar om familjens telefoner kan installera appen, logga in mot familjens egen server hemma och förbli inloggade. Testet använder en påhittad testfamilj, inte er kalender eller andra riktiga familjeuppgifter.</p>
+
+<h2>Vilka uppgifter lana behandlar</h2>
+<ul>
+<li>En nyckel för lana som appen skapar på telefonen. Den lämnar aldrig telefonen. Servern sparar inte certifikatet, bara två fingeravtryck (kontrollsummor) av telefonens offentliga certifikat och nyckel, så att den känner igen telefonen.</li>
+<li>Påhittade namn och roller för testfamiljen, och vilken telefon som hör till vilken testmedlem.</li>
+<li>En kort kod som visas när en ny telefon ansluts. Den gäller i högst 10 minuter.</li>
+<li>Datumet då telefonen senast användes, och om dess åtkomst har avslutats.</li>
+<li>Telefonens adress i hemnätverket (IP-adress) när den ansluter. Den används bara för anslutningen och sparas inte.</li>
+</ul>
+<p>lana frågar inte efter namn, e-post, telefonnummer, Google-konto, kontakter eller plats. Appen har ingen reklam, ingen statistik och ingen kraschrapportering.</p>
+
+<h2>Varför</h2>
+<p>Uppgifterna behövs för att känna igen rätt telefon och rätt familjemedlem, och för att stänga ute en telefon som inte längre ska ha åtkomst.</p>
+
+<h2>Var uppgifterna finns och vem som får dem</h2>
+<ul>
+<li>Uppgifterna finns på familjens egen server hemma, på en krypterad disk. Servern nås bara från hemnätverket. Inget företag lagrar uppgifterna åt oss.</li>
+<li>På telefonen ligger nyckeln i telefonens skyddade nyckellager. Appens övriga uppgifter är krypterade och följer inte med i säkerhetskopior eller när du byter telefon.</li>
+<li>Google Play levererar appen och får uppgifter om installationen enligt Googles villkor, men inga uppgifter från lana.</li>
+<li>DuckDNS ger servern dess namn och Let's Encrypt ger den dess certifikat. De får bara serverns namn och tekniska uppgifter, inga familjeuppgifter.</li>
+<li>Om routern hemma inte hittar serverns namn ställs telefonen in att fråga Quad9 (en stiftelse i Schweiz) om namn på internet, med inställningen Privat DNS. Quad9 får då alla telefonens namnuppslag, serverns namn bland dem, och telefonens IP-adress, men inga uppgifter från lana. Inställningen gäller hela telefonen, även på mobildata, tills den stängs av. Quad9 sparar normalt inte IP-adressen. Vid attacker, fel och felsökning kan Quad9 spara berörda namnuppslag och IP-adresser utan tidsgräns, även vanliga uppslag, enligt <a href="https://quad9.net/privacy/policy/">Quad9s integritetspolicy</a>.</li>
+<li>GitHub visar den här sidan och får besökarens IP-adress när någon öppnar den.</li>
+<li>E-post till kontaktadressen hanteras av Google, enligt <a href="https://policies.google.com/privacy?hl=sv">deras integritetspolicy</a>.</li>
+</ul>
+<p>Ingen annan får uppgifter från lana.</p>
+
+<h2>Säkerhet</h2>
+<p>All trafik mellan appen och servern är krypterad. Vid varje anrop kontrollerar servern att telefonens nyckel fortfarande har åtkomst. Bara ägaren kan godkänna en ny telefon eller avsluta en telefons åtkomst, och bara vid serverns eget tangentbord.</p>
+
+<h2>Hur länge uppgifterna sparas</h2>
+<ul>
+<li>Testets uppgifter raderas när testet är slut, oavsett hur det gick. Då raderas hela testfamiljen och alla telefonnycklar på servern, och telefonerna loggas ut.</li>
+<li>Koden för en ny telefon gäller i högst 10 minuter.</li>
+<li>Det finns inga säkerhetskopior av uppgifterna.</li>
+</ul>
+
+<h2>Radera dina uppgifter</h2>
+<p>När du loggar ut eller avinstallerar appen raderas lanas nyckel och uppgifter på telefonen. Vill du veta vad som finns sparat om dig, eller att det raderas från servern tidigare, skriv till <a href="mailto:lanaplanner.app@gmail.com">lanaplanner.app@gmail.com</a>. Det går även om du har tappat bort telefonen.</p>
+
+<h2>Barn</h2>
+<p>Samma integritetspolicy gäller alla i familjen, barn som vuxna.</p>
+
+<h2>Ändringar</h2>
+<p>När lana börjar använda uppgifter på något nytt sätt uppdateras den här texten, både på webben och i appen, med ett nytt versionsnummer. Den senaste versionen finns alltid på https://lanaplanner.github.io/privacy/.</p>
+</main>
+</body>
+</html>
